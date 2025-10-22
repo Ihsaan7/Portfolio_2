@@ -8,14 +8,19 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
-  // TODO: Replace with actual data from user
   const heroData = {
+    codename: "EGZZI.7",
     name: "Ihsaan Ullah",
     tagline: "Creating with code. Small details matter.",
-    role: "Full-stack Developer | Backend Enthusiast | UI/UX Explorer",
-    location: "Pakistan, Islamabad",
+    roles: [
+      "Full-stack Developer",
+      "Backend Enthusiast",
+      "UI/UX Explorer"
+    ],
+    location: "Pakistan",
+    city: "Islamabad",
     email: "ihsaan2215@gmail.com",
-    phone: "+92 3336 6699 866",
+    phone: "+923 366 699866",
     pronouns: "He/Him",
   };
 
@@ -81,32 +86,51 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
 
   const projects = [
     {
-      title: "React Component Library",
-      period: "2024—Present",
-      description: "Open-source React component library with TypeScript support and comprehensive documentation.",
-      url: "https://example.com",
-      technologies: ["React", "TypeScript", "Storybook"],
+      title: "AnimeBom",
+      period: "2024",
+      description: "Anime streaming and community platform with user authentication and personalized recommendations.",
+      url: "https://animabom.vercel.app/",
+      github: "https://github.com/Ihsaan7/AnimeBom#",
+      technologies: ["React", "Next.js", "Tailwind CSS"],
       featured: true,
     },
     {
-      title: "Portfolio Website",
+      title: "Mini E-commerce with Backend",
       period: "2024",
-      description: "Modern portfolio website built with Next.js and Tailwind CSS, featuring dark mode and smooth animations.",
-      url: "https://example.com",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      description: "Full-stack e-commerce application with product management, shopping cart, and checkout functionality.",
+      url: "https://backend-ecommerce-smoky-zeta.vercel.app/",
+      github: "https://github.com/Ihsaan7/Mini_Ecomm-w-Backend-",
+      technologies: ["React", "Node.js", "Express", "MongoDB"],
     },
     {
-      title: "Task Management App",
-      period: "2023—2024",
-      description: "Full-stack task management application with real-time collaboration features.",
-      url: "https://example.com",
-      technologies: ["React", "Node.js", "MongoDB", "WebSocket"],
+      title: "Netflix UI Clone - Movie App",
+      period: "2024",
+      description: "Modern movie browsing application with Netflix-inspired UI and smooth animations.",
+      url: "https://netflixuiclone-eight.vercel.app/",
+      github: "https://github.com/Ihsaan7/NExt-MovieApp",
+      technologies: ["Next.js", "React", "Tailwind CSS"],
     },
     {
-      title: "E-commerce Platform",
-      period: "2023",
-      description: "E-commerce platform with payment integration and admin dashboard.",
-      technologies: ["Next.js", "Stripe", "PostgreSQL"],
+      title: "Soft UI Dashboard",
+      period: "2024",
+      description: "Beautiful admin dashboard with soft UI design, charts, and data visualization.",
+      url: "https://softui3dashbui.vercel.app/",
+      github: "https://github.com/Ihsaan7/Soft_UI_Dashboard3",
+      technologies: ["React", "CSS", "Chart.js"],
+    },
+  ];
+
+  // Coming Soon Projects
+  const upcomingProjects = [
+    {
+      title: "StudentNest - VU Learning Portal",
+      period: "2024—2025",
+      description: "Comprehensive learning management system for Virtual University students featuring AI-powered assistance, admin chat, course selection, interactive roadmaps, and student collaboration tools.",
+      github: "https://github.com/Ihsaan7/Student_Portal",
+      // TODO: Add live URL when deployment is ready
+      // url: "https://your-deployed-url.vercel.app",
+      technologies: ["React", "Node.js", "MongoDB", "AI", "WebSocket"],
+      comingSoon: true,
     },
   ];
 
@@ -132,7 +156,7 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
         <ExperienceSection experiences={experiences} />
         
         <div className="border-t border-border" />
-        <ProjectsSection projects={projects} />
+        <ProjectsSection projects={projects} upcomingProjects={upcomingProjects} />
         
         <Footer />
       </div>
