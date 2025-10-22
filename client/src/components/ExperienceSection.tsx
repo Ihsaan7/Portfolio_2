@@ -26,9 +26,9 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
       </h2>
       <div className="space-y-8">
         {experiences.map((exp, expIndex) => (
-          <div key={expIndex} className="border border-border rounded-md p-6 bg-card space-y-6" data-testid={`experience-${expIndex}`}>
+          <div key={expIndex} className="border-2 border-primary/30 rounded-lg p-8 bg-card shadow-lg space-y-6" data-testid={`experience-${expIndex}`}>
             <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-md overflow-hidden border border-border flex-shrink-0 bg-muted">
+              <div className="w-16 h-16 rounded-lg overflow-hidden border-2 border-primary/20 flex-shrink-0 bg-muted">
                 <img
                   src={exp.logo || companyLogo}
                   alt={exp.company}
@@ -36,7 +36,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
                 />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold">{exp.company}</h3>
+                <h3 className="text-xl font-bold">{exp.company}</h3>
                 {exp.positions[0]?.current && (
                   <Badge variant="secondary" className="mt-1">
                     Current Employer

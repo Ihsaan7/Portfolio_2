@@ -1,14 +1,19 @@
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="py-12 md:py-16 border-t border-border" data-testid="footer">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Your Name. All rights reserved.
+            © 2025 Ihsaan. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Last updated: October 2025
@@ -16,39 +21,32 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a
-            href="#about"
-            className="text-sm hover:text-primary transition-colors"
+          <button
+            onClick={() => scrollToSection('about')}
+            className="text-sm hover:text-primary transition-colors cursor-pointer"
             data-testid="link-footer-about"
           >
             About
-          </a>
-          <a
-            href="#experience"
-            className="text-sm hover:text-primary transition-colors"
+          </button>
+          <button
+            onClick={() => scrollToSection('experience')}
+            className="text-sm hover:text-primary transition-colors cursor-pointer"
             data-testid="link-footer-experience"
           >
             Experience
-          </a>
-          <a
-            href="#projects"
-            className="text-sm hover:text-primary transition-colors"
+          </button>
+          <button
+            onClick={() => scrollToSection('projects')}
+            className="text-sm hover:text-primary transition-colors cursor-pointer"
             data-testid="link-footer-projects"
           >
             Projects
-          </a>
-          <a
-            href="#blog"
-            className="text-sm hover:text-primary transition-colors"
-            data-testid="link-footer-blog"
-          >
-            Blog
-          </a>
+          </button>
         </div>
 
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com"
+            href="https://github.com/Ihsaan7"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -57,7 +55,7 @@ export function Footer() {
             <SiGithub className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/ihsaan7"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"

@@ -5,6 +5,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { TechStackSection } from "@/components/TechStackSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -45,7 +46,7 @@ export default function Home() {
     },
   ];
 
-  const aboutContent = `Hello, World! I'm **Ihsaan Ullah** — a full-stack developer with a strong **backend focus** and a passion for building **high-performance**, user-friendly web apps. I specialize in **Node.js**, **Express**, and **MongoDB**, and bring interfaces to life with **React**, **Next.js**, and **TailwindCSS**. My workflow runs on **Git**, **Vercel**, and **JetBrains IDEs**, and I thrive on customizing environments for clarity and speed.
+  const aboutContent = `Hello, World! I'm **Ihsaan Ullah** — a full-stack developer with a strong **backend focus** and a passion for building **high-performance**, user-friendly web apps. I specialize in **Styling**, **Backend**, and **Database**, and bring interfaces to life with **React**, **Next.js**, and **TailwindCSS**.
 From crafting **reusable hooks** to troubleshooting **deployments** and animating UI with **GSAP**, I approach every project with precision and a **growth mindset**. Currently exploring **Framer Motion**, refining my **Python** skills, and preparing for my **Final Year Project** — all while turning real-world ideas into usable software.`;
 
   const technologies = [
@@ -57,11 +58,9 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
     { name: "Next.js", icon: "nextjs", url: "https://nextjs.org/" },
     { name: "Tailwind CSS", icon: "tailwind", url: "https://tailwindcss.com/" },
     { name: "Node.js", icon: "nodejs", url: "https://nodejs.org/" },
+    { name: "Express.js", icon: "express", url: "https://expressjs.com/" },
     { name: "MongoDB", icon: "mongodb", url: "https://www.mongodb.com/" },
-    { name: "MySQL", icon: "mysql", url: "https://www.mysql.com/" },
-    { name: "Docker", icon: "docker", url: "https://www.docker.com/" },
     { name: "Git", icon: "git", url: "https://git-scm.com/" },
-    { name: "Figma", icon: "figma", url: "https://www.figma.com/" },
   ];
 
   const experiences = [
@@ -153,14 +152,17 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
         <div className="border-t border-border" />
         <SocialLinksSection links={socialLinks} />
         
-        <div className="border-t border-border" />
+        <div className="border-t border-border" id="about" />
         <AboutSection content={aboutContent} />
         
-        <div className="border-t border-border" />
+        <div className="border-t border-border" id="experience" />
         <ExperienceSection experiences={experiences} />
         
-        <div className="border-t border-border" />
+        <div className="border-t border-border" id="projects" />
         <ProjectsSection projects={projects} upcomingProjects={upcomingProjects} />
+        
+        <div className="border-t border-border" />
+        <ContactSection />
         
         <Footer />
       </div>

@@ -6,11 +6,9 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiNodedotjs,
+  SiExpress,
   SiGit,
-  SiDocker,
   SiMongodb,
-  SiMysql,
-  SiFigma,
   SiCplusplus,
 } from "react-icons/si";
 
@@ -33,11 +31,9 @@ const iconMap: Record<string, any> = {
   nextjs: SiNextdotjs,
   tailwind: SiTailwindcss,
   nodejs: SiNodedotjs,
+  express: SiExpress,
   git: SiGit,
-  docker: SiDocker,
   mongodb: SiMongodb,
-  mysql: SiMysql,
-  figma: SiFigma,
 };
 
 export function TechStackSection({ technologies }: TechStackSectionProps) {

@@ -1,5 +1,5 @@
 import { MapPin, Mail, Phone, User } from "lucide-react";
-import avatarImage from "@assets/generated_images/Pixelated_profile_avatar_icon_7b7646ac.png";
+import avatarImage from "@assets/MyImage_1761152214748.jpg";
 import { useEffect, useState } from "react";
 
 export interface HeroData {

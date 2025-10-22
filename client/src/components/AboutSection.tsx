@@ -5,9 +5,16 @@ interface AboutSectionProps {
 export function AboutSection({ content }: AboutSectionProps) {
   // Parse markdown-style bold (**text**) and render as styled spans
   const renderContent = () => {
-    const parts = content.split(/(\*\*.*?\*\*)/g);
+    const parts = content.split(/(\*\*.*?\*\*|Hello, World!)/g);
     
     return parts.map((part, index) => {
+      if (part === 'Hello, World!') {
+        return (
+          <code key={index} className="px-2 py-1 bg-muted border border-border rounded text-primary font-mono text-base">
+            {part}
+          </code>
+        );
+      }
       if (part.startsWith('**') && part.endsWith('**')) {
         const text = part.slice(2, -2);
         return (
