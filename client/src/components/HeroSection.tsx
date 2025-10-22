@@ -38,34 +38,34 @@ export function HeroSection({ data }: HeroSectionProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl mt-8">
-          <div className="flex items-center gap-3 p-4 border border-border rounded-md" data-testid="card-role">
-            <Briefcase className="h-5 w-5 text-muted-foreground" />
-            <div className="text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-2xl mt-8">
+          <div className="flex items-center gap-3 p-3 border border-border rounded-md bg-card" data-testid="card-role">
+            <Briefcase className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+            <div className="text-left min-w-0">
               <p className="text-sm font-medium">{data.role}</p>
               {data.company && (
-                <p className="text-sm text-muted-foreground">{data.company}</p>
+                <p className="text-xs text-muted-foreground">{data.company}</p>
               )}
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-4 border border-border rounded-md" data-testid="card-location">
-            <MapPin className="h-5 w-5 text-muted-foreground" />
+          <div className="flex items-center gap-3 p-3 border border-border rounded-md bg-card" data-testid="card-location">
+            <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0" />
             <p className="text-sm font-medium">{data.location}</p>
           </div>
 
-          <div className="flex items-center gap-3 p-4 border border-border rounded-md" data-testid="card-email">
-            <Mail className="h-5 w-5 text-muted-foreground" />
+          <div className="flex items-center gap-3 p-3 border border-border rounded-md bg-card" data-testid="card-email">
+            <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0" />
             <a
               href={`mailto:${data.email}`}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium hover:text-primary transition-colors truncate"
             >
               {data.email}
             </a>
           </div>
 
-          <div className="flex items-center gap-3 p-4 border border-border rounded-md" data-testid="card-phone">
-            <Phone className="h-5 w-5 text-muted-foreground" />
+          <div className="flex items-center gap-3 p-3 border border-border rounded-md bg-card" data-testid="card-phone">
+            <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
             <a
               href={`tel:${data.phone}`}
               className="text-sm font-medium hover:text-primary transition-colors"

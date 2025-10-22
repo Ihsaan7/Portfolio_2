@@ -36,14 +36,14 @@ export function SocialLinksSection({ links }: SocialLinksSectionProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 border border-border rounded-md hover-elevate transition-transform hover:-translate-y-1"
+              className="flex items-center gap-4 p-4 border border-border rounded-md bg-card hover-elevate transition-transform hover:-translate-y-1"
               data-testid={`link-social-${index}`}
             >
-              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-muted rounded-md">
+              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-muted rounded-md border border-border">
                 <Icon className="w-6 h-6" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm md:text-base">{link.platform}</p>
+                <p className="font-semibold text-sm">{link.platform}</p>
                 <p className="text-sm text-muted-foreground truncate">{link.username}</p>
               </div>
               <ExternalLink className="h-4 w-4 text-muted-foreground flex-shrink-0" />

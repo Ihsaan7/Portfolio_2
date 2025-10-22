@@ -49,11 +49,11 @@ export function TechStackSection({ technologies }: TechStackSectionProps) {
           const Icon = iconMap[tech.icon.toLowerCase()];
           const content = (
             <div
-              className="flex flex-col items-center gap-3 p-6 border border-border rounded-md hover-elevate transition-transform hover:-translate-y-1"
+              className="flex flex-col items-center gap-3 p-4 border border-border rounded-md bg-card hover-elevate transition-transform hover:-translate-y-1"
               data-testid={`tech-${index}`}
             >
-              {Icon && <Icon className="w-12 h-12" />}
-              <p className="text-sm font-medium text-center">{tech.name}</p>
+              {Icon && <Icon className="w-10 h-10" />}
+              <p className="text-xs font-medium text-center">{tech.name}</p>
             </div>
           );
 

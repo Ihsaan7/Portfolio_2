@@ -29,10 +29,10 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border border-border rounded-md overflow-hidden hover-elevate transition-transform hover:-translate-y-1"
+            className="border border-border rounded-md overflow-hidden bg-card hover-elevate transition-transform hover:-translate-y-1"
             data-testid={`project-${index}`}
           >
-            <div className="relative aspect-video bg-muted overflow-hidden">
+            <div className="relative aspect-video bg-muted overflow-hidden border-b border-border">
               <img
                 src={project.thumbnail || projectThumbnail}
                 alt={project.title}
@@ -44,15 +44,15 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 </Badge>
               )}
             </div>
-            <div className="p-6 space-y-4">
+            <div className="p-5 space-y-4">
               <div>
-                <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
-                <p className="text-sm text-muted-foreground">{project.period}</p>
+                <h3 className="text-base font-semibold mb-1">{project.title}</h3>
+                <p className="text-xs text-muted-foreground">{project.period}</p>
               </div>
-              <p className="text-sm">{project.description}</p>
+              <p className="text-sm text-muted-foreground">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, techIndex) => (
-                  <Badge key={techIndex} variant="secondary">
+                  <Badge key={techIndex} variant="secondary" className="text-xs">
                     {tech}
                   </Badge>
                 ))}
