@@ -109,6 +109,24 @@ npm run dev
 
 The application will be available at `http://localhost:5173`
 
+## Deployment
+
+### Deploy to Vercel (Recommended)
+
+Get your portfolio live in minutes! See [QUICK_START_VERCEL.md](./QUICK_START_VERCEL.md) for quick instructions or [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed setup.
+
+**Quick Deploy:**
+1. Push to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import this repository
+4. Click Deploy
+5. ✅ Your site is live!
+
+### Other Deployment Options
+
+- **Traditional Server** - See [DEPLOYMENT.md](./DEPLOYMENT.md) for Docker, AWS, and traditional hosting
+- **CLI Deployment** - `vercel --prod` for instant deployment
+
 ## Available Scripts
 
 - `npm run dev` - Start development server with hot module replacement
