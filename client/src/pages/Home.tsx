@@ -51,12 +51,11 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
 
   const technologies = [
     { name: "C++", icon: "cplusplus", url: "https://cplusplus.com/" },
-    { name: "TypeScript", icon: "typescript", url: "https://www.typescriptlang.org/" },
     { name: "JavaScript", icon: "javascript", url: "https://developer.mozilla.org/" },
     { name: "Python", icon: "python", url: "https://www.python.org/" },
     { name: "React", icon: "react", url: "https://react.dev/" },
     { name: "Next.js", icon: "nextjs", url: "https://nextjs.org/" },
-    { name: "Tailwind CSS", icon: "tailwind", url: "https://tailwindcss.com/" },
+    { name: "Tailwind", icon: "tailwind", url: "https://tailwindcss.com/" },
     { name: "Node.js", icon: "nodejs", url: "https://nodejs.org/" },
     { name: "Express.js", icon: "express", url: "https://expressjs.com/" },
     { name: "MongoDB", icon: "mongodb", url: "https://www.mongodb.com/" },
