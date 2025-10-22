@@ -17,10 +17,53 @@ export function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    // Validate form data
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedMessage = formData.message.trim();
+    
+    if (!trimmedName) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter your name.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (!trimmedEmail) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter your email.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (!trimmedMessage) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a message.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Create mailto link with validated data
+    const subject = encodeURIComponent(`Portfolio Contact from ${trimmedName}`);
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `Name: ${trimmedName}\nEmail: ${trimmedEmail}\n\nMessage:\n${trimmedMessage}`
     );
     const mailtoLink = `mailto:ihsaan2215@gmail.com?subject=${subject}&body=${body}`;
     
