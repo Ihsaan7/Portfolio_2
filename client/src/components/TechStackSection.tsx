@@ -11,6 +11,7 @@ import {
   SiMongodb,
   SiMysql,
   SiFigma,
+  SiCplusplus,
 } from "react-icons/si";
 
 export interface TechItem {
@@ -24,6 +25,7 @@ interface TechStackSectionProps {
 }
 
 const iconMap: Record<string, any> = {
+  cplusplus: SiCplusplus,
   typescript: SiTypescript,
   javascript: SiJavascript,
   python: SiPython,

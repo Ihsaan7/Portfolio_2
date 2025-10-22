@@ -49,20 +49,19 @@ export default function Home() {
 From crafting **reusable hooks** to troubleshooting **deployments** and animating UI with **GSAP**, I approach every project with precision and a **growth mindset**. Currently exploring **Framer Motion**, refining my **Python** skills, and preparing for my **Final Year Project** — all while turning real-world ideas into usable software.`;
 
   const technologies = [
+    { name: "C++", icon: "cplusplus", url: "https://cplusplus.com/" },
+    { name: "TypeScript", icon: "typescript", url: "https://www.typescriptlang.org/" },
     { name: "JavaScript", icon: "javascript", url: "https://developer.mozilla.org/" },
     { name: "Python", icon: "python", url: "https://www.python.org/" },
     { name: "React", icon: "react", url: "https://react.dev/" },
-    { name: "Next.js", icon: "nextjs", url: "https://nextjs.org/" }, // fundamentals covered, mastering in progress
+    { name: "Next.js", icon: "nextjs", url: "https://nextjs.org/" },
     { name: "Tailwind CSS", icon: "tailwind", url: "https://tailwindcss.com/" },
-    { name: "Node.js (Express)", icon: "nodejs", url: "https://nodejs.org/" },
+    { name: "Node.js", icon: "nodejs", url: "https://nodejs.org/" },
     { name: "MongoDB", icon: "mongodb", url: "https://www.mongodb.com/" },
-    { name: "Mongoose", icon: "mongoose", url: "https://mongoosejs.com/" },
-    { name: "JWT", icon: "jwt", url: "https://jwt.io/" },
-    { name: "bcrypt", icon: "bcrypt", url: "https://www.npmjs.com/package/bcrypt" },
-    { name: "GSAP", icon: "gsap", url: "https://gsap.com/" },
+    { name: "MySQL", icon: "mysql", url: "https://www.mysql.com/" },
+    { name: "Docker", icon: "docker", url: "https://www.docker.com/" },
     { name: "Git", icon: "git", url: "https://git-scm.com/" },
-    { name: "Vercel", icon: "vercel", url: "https://vercel.com/" },
-    { name: "React Router", icon: "reactrouter", url: "https://reactrouter.com/" },
+    { name: "Figma", icon: "figma", url: "https://www.figma.com/" },
   ];
 
   const experiences = [
@@ -87,20 +86,22 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
   const projects = [
     {
       title: "AnimeBom",
-      period: "2024",
+      period: "2025",
       description: "Anime streaming and community platform with user authentication and personalized recommendations.",
       url: "https://animabom.vercel.app/",
       github: "https://github.com/Ihsaan7/AnimeBom#",
       technologies: ["React", "Next.js", "Tailwind CSS"],
       featured: true,
+      thumbnail: "animebom",
     },
     {
-      title: "Mini E-commerce with Backend",
-      period: "2024",
+      title: "FullStack E-commerce",
+      period: "2025",
       description: "Full-stack e-commerce application with product management, shopping cart, and checkout functionality.",
-      url: "https://backend-ecommerce-smoky-zeta.vercel.app/",
-      github: "https://github.com/Ihsaan7/Mini_Ecomm-w-Backend-",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      url: "https://full-stack-ecommerce-lake.vercel.app/",
+      github: "https://github.com/Ihsaan7/FullStack_Ecommerce",
+      technologies: ["React", "Express", "Bcrypt", "Tailwind"],
+      thumbnail: "fullstack-ecom",
     },
     {
       title: "Netflix UI Clone - Movie App",
@@ -109,6 +110,7 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
       url: "https://netflixuiclone-eight.vercel.app/",
       github: "https://github.com/Ihsaan7/NExt-MovieApp",
       technologies: ["Next.js", "React", "Tailwind CSS"],
+      thumbnail: "netflix-clone",
     },
     {
       title: "Soft UI Dashboard",
@@ -116,7 +118,8 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
       description: "Beautiful admin dashboard with soft UI design, charts, and data visualization.",
       url: "https://softui3dashbui.vercel.app/",
       github: "https://github.com/Ihsaan7/Soft_UI_Dashboard3",
-      technologies: ["React", "CSS", "Chart.js"],
+      technologies: ["React", "CSS", "Tailwind"],
+      thumbnail: "soft-ui-dashboard",
     },
   ];
 
@@ -129,8 +132,9 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
       github: "https://github.com/Ihsaan7/Student_Portal",
       // TODO: Add live URL when deployment is ready
       // url: "https://your-deployed-url.vercel.app",
-      technologies: ["React", "Node.js", "MongoDB", "AI", "WebSocket"],
+      technologies: ["Next.js 15", "Supabase", "Tailwind", "Node.js"],
       comingSoon: true,
+      thumbnail: "studentnest",
     },
   ];
 
@@ -144,13 +148,13 @@ From crafting **reusable hooks** to troubleshooting **deployments** and animatin
         <HeroSection data={heroData} />
         
         <div className="border-t border-border" />
+        <TechStackSection technologies={technologies} />
+        
+        <div className="border-t border-border" />
         <SocialLinksSection links={socialLinks} />
         
         <div className="border-t border-border" />
         <AboutSection content={aboutContent} />
-        
-        <div className="border-t border-border" />
-        <TechStackSection technologies={technologies} />
         
         <div className="border-t border-border" />
         <ExperienceSection experiences={experiences} />

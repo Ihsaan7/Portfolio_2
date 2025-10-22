@@ -1,7 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Clock } from "lucide-react";
-import projectThumbnail from "@assets/generated_images/Web_app_project_thumbnail_e6cfdce4.png";
+import animeBomImage from "@assets/AnimeBom_1761151538436.png";
+import fullStackEcomImage from "@assets/FullStack_Ecom_1761151538437.png";
+import netflixCloneImage from "@assets/Netflix-UI-Clone_1761151538437.png";
+import softUIDashboardImage from "@assets/Soft_UI_Dashborad_1761151538437.png";
+import studentNestImage from "@assets/StudentNest_1761151655957.png";
 
 export interface Project {
   title: string;
@@ -20,6 +24,15 @@ interface ProjectsSectionProps {
   upcomingProjects?: Project[];
 }
 
+// Project image map
+const projectImages: Record<string, string> = {
+  "animebom": animeBomImage,
+  "fullstack-ecom": fullStackEcomImage,
+  "netflix-clone": netflixCloneImage,
+  "soft-ui-dashboard": softUIDashboardImage,
+  "studentnest": studentNestImage,
+};
+
 export function ProjectsSection({ projects, upcomingProjects = [] }: ProjectsSectionProps) {
   return (
     <section className="py-16 md:py-20">
@@ -29,18 +42,22 @@ export function ProjectsSection({ projects, upcomingProjects = [] }: ProjectsSec
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
+        {projects.map((project, index) => {
+          const imageSrc = project.thumbnail && projectImages[project.thumbnail];
+          return (
           <div
             key={index}
             className="border border-border rounded-md overflow-hidden bg-card hover-elevate transition-transform hover:-translate-y-1"
             data-testid={`project-${index}`}
           >
             <div className="relative aspect-video bg-muted overflow-hidden border-b border-border">
-              <img
-                src={project.thumbnail || projectThumbnail}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
+              {imageSrc && (
+                <img
+                  src={imageSrc}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              )}
               {project.featured && (
                 <Badge className="absolute top-3 right-3 bg-primary">
                   Featured
@@ -92,7 +109,8 @@ export function ProjectsSection({ projects, upcomingProjects = [] }: ProjectsSec
               </div>
             </div>
           </div>
-        ))}
+        );
+        })}
       </div>
 
       {/* Coming Soon Section */}
@@ -105,23 +123,27 @@ export function ProjectsSection({ projects, upcomingProjects = [] }: ProjectsSec
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {upcomingProjects.map((project, index) => (
+            {upcomingProjects.map((project, index) => {
+              const imageSrc = project.thumbnail && projectImages[project.thumbnail];
+              return (
               <div
                 key={index}
                 className="border-2 border-dashed border-border rounded-md overflow-hidden bg-card/50 relative"
                 data-testid={`upcoming-project-${index}`}
               >
                 <div className="absolute top-3 right-3 z-10">
-                  <Badge variant="secondary" className="bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 border-yellow-500/50">
+                  <Badge className="bg-yellow-500 dark:bg-yellow-600 text-white font-semibold shadow-md">
                     Almost Ready
                   </Badge>
                 </div>
                 <div className="relative aspect-video bg-muted overflow-hidden border-b border-dashed border-border">
-                  <img
-                    src={project.thumbnail || projectThumbnail}
-                    alt={project.title}
-                    className="w-full h-full object-cover opacity-70"
-                  />
+                  {imageSrc && (
+                    <img
+                      src={imageSrc}
+                      alt={project.title}
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                  )}
                 </div>
                 <div className="p-5 space-y-4">
                   <div>
@@ -185,7 +207,8 @@ export function ProjectsSection({ projects, upcomingProjects = [] }: ProjectsSec
                   */}
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       )}

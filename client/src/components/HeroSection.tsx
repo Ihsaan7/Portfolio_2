@@ -49,10 +49,10 @@ export function HeroSection({ data }: HeroSectionProps) {
     <section className="py-16 md:py-20">
       <div className="flex flex-col space-y-8">
         {/* Codename at top */}
-        <div className="text-center">
+        <div className="text-center pb-8 border-b-2 border-primary/30">
           <h2 
-            className="text-5xl md:text-6xl font-bold tracking-wider" 
-            style={{ fontFamily: 'monospace' }}
+            className="text-5xl md:text-7xl font-bold tracking-widest text-primary" 
+            style={{ fontFamily: 'VT323, monospace' }}
             data-testid="text-codename"
           >
             {data.codename}
@@ -71,16 +71,14 @@ export function HeroSection({ data }: HeroSectionProps) {
                 data-testid="img-avatar"
               />
             </div>
-            {/* Country Flag Badge */}
-            <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-green-600 dark:bg-green-700 border-2 border-border flex items-center justify-center overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center relative">
-                <div className="absolute left-0 top-0 bottom-0 w-1/3 bg-green-700 dark:bg-green-800"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white fill-current">
-                    <path d="M12,2.5c0,0-3,8-3,11.5c0,2.5,1.5,4,3,4s3-1.5,3-4C15,10.5,12,2.5,12,2.5z M14,15.5c0,1-1,2-2,2s-2-1-2-2c0-2,2-6.5,2-6.5S14,13.5,14,15.5z M20,10l-1.5,1l1.5,1l-1.5,1l1.5,1l-1.5,1l1.5,1l-1.5,0.5l-0.5-1.5l-1,1.5v-2l-1,1.5v-2l-1,1v-1.5l-1,1v-2l1-1.5l-1-1.5l1-1l-1-1.5L15,8l-1-1.5l1-1L15,4l0.5,1.5l1-1.5v2l1-1.5v2l1-1.5v1.5l1-1v2l-1,1.5L20,10z"/>
-                  </svg>
-                </div>
-              </div>
+            {/* Age Badge */}
+            <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-primary border-2 border-background flex items-center justify-center">
+              <span 
+                className="text-xl font-bold text-primary-foreground"
+                style={{ fontFamily: 'Orbitron, monospace' }}
+              >
+                22
+              </span>
             </div>
           </div>
 

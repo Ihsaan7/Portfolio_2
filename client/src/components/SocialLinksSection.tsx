@@ -27,7 +27,7 @@ export function SocialLinksSection({ links }: SocialLinksSectionProps) {
       <h2 className="text-2xl md:text-3xl font-semibold mb-8" data-testid="heading-social">
         Social Links
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {links.map((link, index) => {
           const Icon = iconMap[link.icon];
           return (
@@ -36,7 +36,7 @@ export function SocialLinksSection({ links }: SocialLinksSectionProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 border border-border rounded-md bg-card hover-elevate transition-transform hover:-translate-y-1"
+              className="flex flex-col items-center gap-3 p-4 border border-border rounded-md bg-card hover-elevate transition-transform hover:-translate-y-1 text-center"
               data-testid={`link-social-${index}`}
             >
               <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-muted rounded-md border border-border">
@@ -44,9 +44,9 @@ export function SocialLinksSection({ links }: SocialLinksSectionProps) {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-semibold text-sm">{link.platform}</p>
-                <p className="text-sm text-muted-foreground truncate">{link.username}</p>
+                <p className="text-xs text-muted-foreground truncate">{link.username}</p>
               </div>
-              <ExternalLink className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+              <ExternalLink className="h-3 w-3 text-muted-foreground flex-shrink-0" />
             </a>
           );
         })}
