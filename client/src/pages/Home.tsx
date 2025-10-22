@@ -5,7 +5,6 @@ import { AboutSection } from "@/components/AboutSection";
 import { TechStackSection } from "@/components/TechStackSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import { BlogSection } from "@/components/BlogSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -141,30 +140,6 @@ export default function Home() {
     },
   ];
 
-  const blogPosts = [
-    {
-      title: "Building Modern Web Applications",
-      date: "Oct 22, 2025",
-      url: "#",
-      isNew: true,
-    },
-    {
-      title: "Tips for Creating Beautiful UI",
-      date: "Oct 15, 2025",
-      url: "#",
-    },
-    {
-      title: "Understanding React Hooks",
-      date: "Oct 8, 2025",
-      url: "#",
-    },
-    {
-      title: "Getting Started with TypeScript",
-      date: "Oct 1, 2025",
-      url: "#",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <div className="fixed top-4 right-4 z-50">
@@ -173,12 +148,22 @@ export default function Home() {
 
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <HeroSection data={heroData} />
+        
+        <div className="border-t border-border" />
         <SocialLinksSection links={socialLinks} />
+        
+        <div className="border-t border-border" />
         <AboutSection content={aboutContent} />
+        
+        <div className="border-t border-border" />
         <TechStackSection technologies={technologies} />
+        
+        <div className="border-t border-border" />
         <ExperienceSection experiences={experiences} />
+        
+        <div className="border-t border-border" />
         <ProjectsSection projects={projects} />
-        <BlogSection posts={blogPosts} />
+        
         <Footer />
       </div>
     </div>
