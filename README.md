@@ -16,6 +16,7 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 ## Tech Stack
 
 ### Frontend
+
 - **React** - UI library
 - **TypeScript** - Type-safe JavaScript
 - **Vite** - Next generation frontend tooling
@@ -24,11 +25,13 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 - **Tanstack Query** - Server state management
 
 ### Backend
+
 - **Node.js** - Runtime environment
 - **Express** - Web framework (via Vite)
 - **Drizzle ORM** - TypeScript ORM
 
 ### Development Tools
+
 - **PostCSS** - CSS transformations
 - **ESLint** - Code linting
 - **TypeScript Compiler** - Type checking
@@ -73,28 +76,33 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn package manager
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Ihsaan7/Portfolio_2.git
 cd PortfolioBuilder
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Build the project:
+
 ```bash
 npm run build
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -111,6 +119,7 @@ The application will be available at `http://localhost:5173`
 ## Components Overview
 
 ### Page Sections
+
 - **HeroSection** - Welcome banner with call-to-action
 - **AboutSection** - Personal introduction and background
 - **ExperienceSection** - Work experience and timeline
@@ -122,6 +131,7 @@ The application will be available at `http://localhost:5173`
 - **Footer** - Footer navigation and information
 
 ### Utilities & Hooks
+
 - **useToast** - Toast notifications hook
 - **useMobile** - Responsive mobile detection hook
 - **utils.ts** - Common utility functions (cn for class names)
@@ -130,12 +140,15 @@ The application will be available at `http://localhost:5173`
 ## Customization
 
 ### Theme Configuration
+
 Edit `tailwind.config.ts` to customize colors, fonts, and other design tokens.
 
 ### Design Guidelines
+
 Refer to `design_guidelines.md` for detailed design system documentation.
 
 ### Component Examples
+
 Check the `components/examples/` directory for reference implementations of all sections.
 
 ## Contributing

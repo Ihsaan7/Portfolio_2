@@ -27,6 +27,7 @@ ls -la dist/
 ```
 
 The build will create:
+
 - Static HTML/CSS/JS files
 - Optimized bundle with code splitting
 - Source maps (optional)
@@ -59,6 +60,7 @@ npm run db:seed
 ### Backup Strategy
 
 1. **Before Deployment**:
+
    ```bash
    mysqldump -u root -p portfolio_db > backup_$(date +%Y%m%d_%H%M%S).sql
    ```
@@ -72,6 +74,7 @@ npm run db:seed
 ### Option 1: Traditional Server (Node.js + Static Files)
 
 #### Prerequisites
+
 - Node.js runtime (v16+)
 - Reverse proxy (nginx/Apache)
 - Process manager (PM2/systemd)
@@ -80,6 +83,7 @@ npm run db:seed
 #### Steps
 
 1. **Deploy files to server**:
+
    ```bash
    scp -r dist/ user@server:/var/www/portfolio/
    scp -r node_modules/ user@server:/var/www/portfolio/
@@ -87,27 +91,32 @@ npm run db:seed
    ```
 
 2. **Install PM2 globally**:
+
    ```bash
    npm install -g pm2
    ```
 
 3. **Create PM2 ecosystem config** (`ecosystem.config.js`):
+
    ```javascript
    module.exports = {
-     apps: [{
-       name: 'portfolio',
-       script: './server/index.ts',
-       env: {
-         NODE_ENV: 'production'
+     apps: [
+       {
+         name: "portfolio",
+         script: "./server/index.ts",
+         env: {
+           NODE_ENV: "production",
+         },
+         watch: false,
+         instances: "max",
+         exec_mode: "cluster",
        },
-       watch: false,
-       instances: 'max',
-       exec_mode: 'cluster'
-     }]
+     ],
    };
    ```
 
 4. **Start with PM2**:
+
    ```bash
    pm2 start ecosystem.config.js
    pm2 save
@@ -115,6 +124,7 @@ npm run db:seed
    ```
 
 5. **Configure nginx**:
+
    ```nginx
    server {
      listen 443 ssl http2;
@@ -144,11 +154,13 @@ npm run db:seed
 ### Option 2: Vercel Deployment
 
 1. **Connect repository to Vercel**:
+
    - Go to vercel.com
    - Click "New Project"
    - Select your GitHub repository
 
 2. **Configure build settings**:
+
    - Build Command: `npm run build`
    - Output Directory: `dist`
    - Install Command: `npm install`
@@ -211,7 +223,7 @@ docker-compose up -d
 #### docker-compose.yml example
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   app:
@@ -223,7 +235,7 @@ services:
       DATABASE_URL: postgresql://user:pass@db:5432/portfolio
     depends_on:
       - db
-  
+
   db:
     image: postgres:15
     environment:
@@ -280,18 +292,21 @@ pm2 monit
 ## Performance Optimization
 
 ### Frontend
+
 - Enable gzip compression in web server
 - Set cache headers for static assets
 - Use CDN for assets (CloudFront, Cloudflare)
 - Monitor Core Web Vitals with Lighthouse
 
 ### Backend
+
 - Use connection pooling for database
 - Implement API caching with Redis
 - Monitor response times
 - Set up rate limiting
 
 ### Database
+
 - Create indexes on frequently queried fields
 - Regular vacuum and analyze operations
 - Monitor query performance
@@ -300,6 +315,7 @@ pm2 monit
 ## Monitoring & Logging
 
 ### Application Monitoring
+
 ```bash
 # Install monitoring tools
 npm install pm2-logrotate
@@ -310,14 +326,18 @@ pm2 web
 ```
 
 ### Log Aggregation
+
 Consider services like:
+
 - CloudWatch (AWS)
 - Stackdriver (GCP)
 - ELK Stack (self-hosted)
 - Datadog
 
 ### Alerts
+
 Set up alerts for:
+
 - Application crashes
 - High error rates
 - High response times
@@ -354,21 +374,21 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
-      
+          node-version: "18"
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build
         run: npm run build
-      
+
       - name: Deploy
         run: |
           # Add your deployment script here
@@ -378,6 +398,7 @@ jobs:
 ## Troubleshooting
 
 ### Application won't start
+
 ```bash
 # Check logs
 pm2 logs portfolio
@@ -391,6 +412,7 @@ npm run db:test
 ```
 
 ### High memory usage
+
 ```bash
 # Check process memory
 pm2 monit
@@ -400,6 +422,7 @@ pm2 restart portfolio --max-memory-restart 500M
 ```
 
 ### Slow API responses
+
 ```bash
 # Profile application
 node --prof server/index.ts
@@ -424,17 +447,20 @@ node --prof-process isolate-*.log > profile.txt
 ## Maintenance
 
 ### Weekly
+
 - Monitor logs for errors
 - Check uptime/availability
 - Review performance metrics
 
 ### Monthly
+
 - Update dependencies
 - Security scanning
 - Database optimization
 - Backup verification
 
 ### Quarterly
+
 - Full security audit
 - Performance benchmarking
 - Disaster recovery test

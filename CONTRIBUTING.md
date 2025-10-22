@@ -73,6 +73,7 @@ Follow conventional commits format:
 ```
 
 #### Types
+
 - `feat` - New feature
 - `fix` - Bug fix
 - `docs` - Documentation changes
@@ -83,6 +84,7 @@ Follow conventional commits format:
 - `chore` - Build, dependencies, tooling changes
 
 #### Scope (Optional)
+
 - `client` - Frontend changes
 - `server` - Backend changes
 - `ui` - UI component changes
@@ -90,6 +92,7 @@ Follow conventional commits format:
 - `config` - Configuration files
 
 #### Examples
+
 ```
 feat(client): Add dark theme toggle component
 fix(server): Resolve contact form submission error
@@ -105,6 +108,7 @@ refactor(ui): Improve button component accessibility
 4. **Keep commits small** - Easier to review and revert if needed
 
 Good commit message example:
+
 ```
 feat(client): Add project filtering by technology
 
@@ -118,17 +122,20 @@ Fixes #42
 ## Pull Request Process
 
 1. **Update your branch** with latest upstream changes:
+
    ```bash
    git fetch upstream
    git rebase upstream/main
    ```
 
 2. **Push your changes** to your fork:
+
    ```bash
    git push origin feature/your-feature-name
    ```
 
 3. **Create a Pull Request** on GitHub:
+
    - Use a clear, descriptive title
    - Reference related issues
    - Describe changes made
@@ -136,28 +143,35 @@ Fixes #42
    - Ensure all tests pass
 
 4. **PR Description Template**:
+
    ```markdown
    ## Description
+
    Brief description of changes
 
    ## Type of Change
+
    - [ ] Bug fix
    - [ ] New feature
    - [ ] Breaking change
    - [ ] Documentation update
 
    ## Related Issues
+
    Fixes #123
 
    ## Testing
+
    - [ ] Tested on desktop
    - [ ] Tested on mobile
    - [ ] No console errors
 
    ## Screenshots (if applicable)
+
    [Add images if UI changed]
 
    ## Checklist
+
    - [ ] My code follows the style guidelines
    - [ ] I've updated documentation
    - [ ] I've added comments where needed
@@ -167,14 +181,11 @@ Fixes #42
 ## Code Style Guidelines
 
 ### TypeScript/React
+
 ```typescript
 // Use functional components
 export const MyComponent: React.FC<Props> = ({ prop1, prop2 }) => {
-  return (
-    <div className="flex items-center">
-      {prop1}
-    </div>
-  );
+  return <div className="flex items-center">{prop1}</div>;
 };
 
 // Use descriptive names
@@ -188,22 +199,25 @@ const ANIMATION_DELAY = 100;
 ```
 
 ### Styling with Tailwind
+
 ```tsx
 // Use meaningful class combinations
 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
   Click me
-</button>
+</button>;
 
 // Extract complex class strings to variables
-const buttonClasses = "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700";
-<button className={buttonClasses}>Click me</button>
+const buttonClasses =
+  "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700";
+<button className={buttonClasses}>Click me</button>;
 ```
 
 ### Component Organization
+
 ```typescript
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   title: string;
@@ -233,6 +247,7 @@ export const MyComponent: React.FC<Props> = ({ title, onClose }) => {
 ## Adding New Features
 
 ### New Component
+
 1. Create file in `client/src/components/`
 2. Use TypeScript and define prop interfaces
 3. Support dark mode if applicable
@@ -240,6 +255,7 @@ export const MyComponent: React.FC<Props> = ({ title, onClose }) => {
 5. Add to component examples if it's a section
 
 ### New Page Section
+
 1. Create component in `client/src/components/`
 2. Create example in `client/src/components/examples/`
 3. Add to schema in `shared/schema.ts`
@@ -248,6 +264,7 @@ export const MyComponent: React.FC<Props> = ({ title, onClose }) => {
 6. Document in README.md
 
 ### New API Endpoint
+
 1. Define types in `shared/schema.ts`
 2. Add route in `server/routes.ts`
 3. Implement storage in `server/storage.ts`
@@ -257,6 +274,7 @@ export const MyComponent: React.FC<Props> = ({ title, onClose }) => {
 ## Testing
 
 ### Manual Testing Checklist
+
 - [ ] Feature works as expected
 - [ ] Works on desktop (1920px)
 - [ ] Works on tablet (768px)
@@ -271,6 +289,7 @@ export const MyComponent: React.FC<Props> = ({ title, onClose }) => {
 ## Reporting Issues
 
 When reporting bugs, please include:
+
 1. Clear description of the issue
 2. Steps to reproduce
 3. Expected behavior
@@ -282,6 +301,7 @@ When reporting bugs, please include:
 ## Feature Requests
 
 When suggesting features:
+
 1. Clear description of the feature
 2. Use case and why it's useful
 3. Possible implementation approach
@@ -297,6 +317,7 @@ When suggesting features:
 ## Recognition
 
 Contributors will be recognized in:
+
 - Project README
 - Git commit history
 - GitHub contributors page

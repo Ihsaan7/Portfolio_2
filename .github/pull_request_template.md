@@ -1,9 +1,11 @@
 ## Description
+
 <!-- Provide a brief description of the changes in this PR -->
 
 Fixes # (issue)
 
 ## Type of Change
+
 <!-- Mark the relevant option with an "x" -->
 
 - [ ] Bug fix (non-breaking change which fixes an issue)
@@ -12,6 +14,7 @@ Fixes # (issue)
 - [ ] Documentation update
 
 ## Testing
+
 <!-- Describe the tests you ran to verify your changes -->
 
 - [ ] Tested on desktop (1920px)

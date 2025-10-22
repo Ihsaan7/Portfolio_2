@@ -57,9 +57,11 @@ The Portfolio Builder is a full-stack web application following a client-server 
 ## Directory Structure & Responsibilities
 
 ### `/client`
+
 Frontend React application built with Vite.
 
 - **`src/components/`** - React components organized by type:
+
   - `ui/` - Low-level reusable UI components (shadcn/ui based)
   - Page section components (HeroSection, AboutSection, etc.)
   - `ThemeProvider.tsx` - Theme context and logic
@@ -67,14 +69,17 @@ Frontend React application built with Vite.
   - `examples/` - Reference implementations of sections
 
 - **`src/pages/`** - Page components:
+
   - `Home.tsx` - Main home page
   - `not-found.tsx` - 404 error page
 
 - **`src/hooks/`** - Custom React hooks:
+
   - `use-toast.ts` - Toast notification management
   - `use-mobile.tsx` - Mobile responsiveness detection
 
 - **`src/lib/`** - Utility modules:
+
   - `queryClient.ts` - Tanstack Query configuration
   - `utils.ts` - Helper functions (especially `cn()` for class names)
 
@@ -85,6 +90,7 @@ Frontend React application built with Vite.
 - **`public/`** - Static assets
 
 ### `/server`
+
 Backend Node.js/Express server.
 
 - **`index.ts`** - Server entry point and configuration
@@ -93,6 +99,7 @@ Backend Node.js/Express server.
 - **`vite.ts`** - Vite middleware integration for dev/prod
 
 ### `/shared`
+
 Shared code between client and server.
 
 - **`schema.ts`** - TypeScript interfaces and data schemas
@@ -102,19 +109,20 @@ Shared code between client and server.
 
 ### Root Configuration Files
 
-| File | Purpose |
-|------|---------|
-| `vite.config.ts` | Build and dev server configuration |
-| `tailwind.config.ts` | Tailwind CSS design tokens |
-| `tsconfig.json` | TypeScript compilation settings |
-| `postcss.config.js` | PostCSS plugins (Tailwind) |
-| `drizzle.config.ts` | Drizzle ORM database config |
-| `package.json` | Dependencies and scripts |
-| `components.json` | shadcn/ui configuration |
+| File                 | Purpose                            |
+| -------------------- | ---------------------------------- |
+| `vite.config.ts`     | Build and dev server configuration |
+| `tailwind.config.ts` | Tailwind CSS design tokens         |
+| `tsconfig.json`      | TypeScript compilation settings    |
+| `postcss.config.js`  | PostCSS plugins (Tailwind)         |
+| `drizzle.config.ts`  | Drizzle ORM database config        |
+| `package.json`       | Dependencies and scripts           |
+| `components.json`    | shadcn/ui configuration            |
 
 ## Data Flow
 
 ### 1. User Interaction Flow
+
 ```
 User Action
     ↓
@@ -128,6 +136,7 @@ User Sees Changes
 ```
 
 ### 2. API Communication Flow
+
 ```
 Client Component
     ↓
@@ -147,6 +156,7 @@ Component Re-render
 ```
 
 ### 3. Theme Management Flow
+
 ```
 User Clicks Theme Toggle
     ↓
@@ -164,17 +174,20 @@ Visual Theme Changes
 ## Key Technologies & Patterns
 
 ### Frontend Architecture
+
 - **Component-Based**: Small, reusable components
 - **Hooks-Based**: Functional components with custom hooks
 - **Server State Management**: Tanstack Query for API data
 - **Context API**: Theme switching across application
 
 ### Backend Architecture
+
 - **REST API**: Standard HTTP methods for data operations
 - **ORM Pattern**: Drizzle ORM for type-safe database queries
 - **Middleware**: Standard Express middleware stack
 
 ### Styling Strategy
+
 - **Utility-First CSS**: Tailwind CSS for styling
 - **Dark Mode Support**: CSS variables and class-based theming
 - **Responsive Design**: Mobile-first approach with Tailwind breakpoints
@@ -182,12 +195,14 @@ Visual Theme Changes
 ## Development Workflow
 
 ### Local Development
+
 1. Start dev server: `npm run dev`
 2. Vite serves client on `http://localhost:5173`
 3. Hot Module Replacement enabled for instant feedback
 4. TypeScript checking in real-time
 
 ### Production Build
+
 1. Run: `npm run build`
 2. TypeScript compilation
 3. React code splitting and optimization
@@ -212,6 +227,7 @@ Visual Theme Changes
 ## Extensibility Points
 
 ### Adding New Sections
+
 1. Create component in `components/`
 2. Define schema in `shared/schema.ts`
 3. Add to API routes in `server/routes.ts`
@@ -219,12 +235,14 @@ Visual Theme Changes
 5. Import and use in `App.tsx`
 
 ### Adding New API Endpoints
+
 1. Define route in `server/routes.ts`
 2. Implement handler with storage logic
 3. Add schema to `shared/schema.ts`
 4. Update client with useQuery/useMutation
 
 ### Styling New Components
+
 1. Use Tailwind classes for styling
 2. Reference `design_guidelines.md` for consistency
 3. Leverage UI components from `components/ui/`
